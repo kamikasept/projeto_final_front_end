@@ -383,7 +383,7 @@ h2 {
 
 .reservas {
   margin: 200px 30px 30px 30px;
-  min-height: 100vh;
+  min-height: 110vh;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   color: #ffffff;
   padding: 20px;
@@ -495,6 +495,68 @@ h2 {
   font-size: 1rem;
   resize: vertical;
 }
+.button-confirm {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(45deg, #ff6b35, #ff8c42);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+.button-confirm:disabled {
+  background: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-confirm:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+.contato {
+  gap: 40px;
+}
+.contato-cliente {
+  margin-bottom: 20px;
+}
+.reservas h3 {
+  color: #ff6b35;
+  margin-bottom: 20px;
+}
+.resto-info {
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+.resto-info h4 {
+  color: #ff6b35;
+  margin-bottom: 10px;
+}
+.resto-info p {
+  color: #cccccc;
+}
+.resto-info ul {
+  line-height: 1.8;
+}
+.map {
+  width: 100%;
+  height: 400px;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #404040;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

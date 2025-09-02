@@ -215,23 +215,9 @@ const Reservas = () => {
                 </div>
 
                 <button
+                  className="button-confirm"
                   onClick={(e) => handleSubmit(e, "reserva")}
                   disabled={isSubmitting}
-                  style={{
-                    width: "100%",
-                    padding: "18px",
-                    background: isSubmitting
-                      ? "#666666"
-                      : "linear-gradient(45deg, #ff6b35, #ff8c42)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "12px",
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    cursor: isSubmitting ? "not-allowed" : "pointer",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 4px 15px rgba(255, 107, 53, 0.3)",
-                  }}
                 >
                   {isSubmitting ? "Enviando..." : "🍽️ Confirmar Reserva"}
                 </button>
@@ -242,161 +228,63 @@ const Reservas = () => {
           {/* Contato Tab */}
           {activeTab === "contato" && (
             <div>
-              <h2
-                style={{
-                  color: "#ff6b35",
-                  marginBottom: "25px",
-                  fontSize: "1.8rem",
-                  textAlign: "center",
-                }}
-              >
-                💬 Entre em Contato
-              </h2>
+              <h2 className="formulario--titulo">💬 Entre em Contato</h2>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                  gap: "40px",
-                }}
-              >
+              <div className="dados-cliente contato">
                 <div>
                   <form onSubmit={(e) => handleSubmit(e, "contato")}>
-                    <div style={{ marginBottom: "20px" }}>
-                      <label
-                        style={{
-                          display: "block",
-                          marginBottom: "8px",
-                          color: "#cccccc",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Nome *
-                      </label>
+                    <div>
+                      <label className="label">Nome *</label>
                       <input
+                        className="input-cliente contato-cliente"
                         type="text"
                         name="nome"
                         value={contactData.nome}
                         onChange={(e) => handleInputChange(e, "contato")}
                         required
-                        style={{
-                          width: "100%",
-                          padding: "15px",
-                          borderRadius: "10px",
-                          border: "1px solid #404040",
-                          background: "rgba(30, 30, 30, 0.8)",
-                          color: "#ffffff",
-                          fontSize: "1rem",
-                        }}
                       />
                     </div>
 
-                    <div style={{ marginBottom: "20px" }}>
-                      <label
-                        style={{
-                          display: "block",
-                          marginBottom: "8px",
-                          color: "#cccccc",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Email *
-                      </label>
+                    <div>
+                      <label className="label">Email *</label>
                       <input
+                        className="input-cliente contato-cliente"
                         type="email"
                         name="email"
                         value={contactData.email}
                         onChange={(e) => handleInputChange(e, "contato")}
                         required
-                        style={{
-                          width: "100%",
-                          padding: "15px",
-                          borderRadius: "10px",
-                          border: "1px solid #404040",
-                          background: "rgba(30, 30, 30, 0.8)",
-                          color: "#ffffff",
-                          fontSize: "1rem",
-                        }}
                       />
                     </div>
 
-                    <div style={{ marginBottom: "20px" }}>
-                      <label
-                        style={{
-                          display: "block",
-                          marginBottom: "8px",
-                          color: "#cccccc",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Assunto *
-                      </label>
+                    <div>
+                      <label className="label">Assunto *</label>
                       <input
+                        className="input-cliente contato-cliente"
                         type="text"
                         name="assunto"
                         value={contactData.assunto}
                         onChange={(e) => handleInputChange(e, "contato")}
                         required
-                        style={{
-                          width: "100%",
-                          padding: "15px",
-                          borderRadius: "10px",
-                          border: "1px solid #404040",
-                          background: "rgba(30, 30, 30, 0.8)",
-                          color: "#ffffff",
-                          fontSize: "1rem",
-                        }}
                       />
                     </div>
 
-                    <div style={{ marginBottom: "25px" }}>
-                      <label
-                        style={{
-                          display: "block",
-                          marginBottom: "8px",
-                          color: "#cccccc",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Mensagem *
-                      </label>
+                    <div>
+                      <label className="label">Mensagem *</label>
                       <textarea
+                        className="input-cliente contato-cliente"
                         name="mensagem"
                         value={contactData.mensagem}
                         onChange={(e) => handleInputChange(e, "contato")}
                         required
                         rows="6"
-                        style={{
-                          width: "100%",
-                          padding: "15px",
-                          borderRadius: "10px",
-                          border: "1px solid #404040",
-                          background: "rgba(30, 30, 30, 0.8)",
-                          color: "#ffffff",
-                          fontSize: "1rem",
-                          resize: "vertical",
-                        }}
                       />
                     </div>
 
                     <button
+                      className="button-confirm"
                       type="submit"
                       disabled={isSubmitting}
-                      style={{
-                        width: "100%",
-                        padding: "18px",
-                        background: isSubmitting
-                          ? "#666666"
-                          : "linear-gradient(45deg, #ff6b35, #ff8c42)",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "12px",
-                        fontSize: "1.1rem",
-                        fontWeight: "600",
-                        cursor: isSubmitting ? "not-allowed" : "pointer",
-                        transition: "all 0.3s ease",
-                        boxShadow: "0 4px 15px rgba(255, 107, 53, 0.3)",
-                      }}
                     >
                       {isSubmitting ? "Enviando..." : "💬 Enviar Mensagem"}
                     </button>
@@ -404,61 +292,24 @@ const Reservas = () => {
                 </div>
 
                 <div>
-                  <h3 style={{ color: "#ff6b35", marginBottom: "20px" }}>
-                    📞 Informações de Contato
-                  </h3>
+                  <h3>📞 Informações de Contato</h3>
 
-                  <div style={{ marginBottom: "25px" }}>
-                    <div
-                      style={{
-                        background: "rgba(255, 107, 53, 0.1)",
-                        border: "1px solid rgba(255, 107, 53, 0.3)",
-                        borderRadius: "12px",
-                        padding: "20px",
-                        marginBottom: "15px",
-                      }}
-                    >
-                      <h4 style={{ color: "#ff6b35", marginBottom: "10px" }}>
-                        📱 Telefone
-                      </h4>
-                      <p style={{ color: "#cccccc" }}>+351 912 345 678</p>
+                  <div>
+                    <div className="resto-info">
+                      <h4>📱 Telefone</h4>
+                      <p>+351 912 345 678</p>
                     </div>
 
-                    <div
-                      style={{
-                        background: "rgba(255, 107, 53, 0.1)",
-                        border: "1px solid rgba(255, 107, 53, 0.3)",
-                        borderRadius: "12px",
-                        padding: "20px",
-                        marginBottom: "15px",
-                      }}
-                    >
-                      <h4 style={{ color: "#ff6b35", marginBottom: "10px" }}>
-                        ✉️ Email
-                      </h4>
-                      <p style={{ color: "#cccccc" }}>
-                        reservas@hamburgaria.pt
-                      </p>
+                    <div className="resto-info">
+                      <h4>✉️ Email</h4>
+                      <p>reservas@hamburgaria.pt</p>
                     </div>
 
-                    <div
-                      style={{
-                        background: "rgba(255, 107, 53, 0.1)",
-                        border: "1px solid rgba(255, 107, 53, 0.3)",
-                        borderRadius: "12px",
-                        padding: "20px",
-                      }}
-                    >
-                      <h4 style={{ color: "#ff6b35", marginBottom: "10px" }}>
-                        🕒 Horário de Funcionamento
-                      </h4>
-                      <p style={{ color: "#cccccc", marginBottom: "5px" }}>
-                        Segunda a Quinta: 18:00 - 24:00
-                      </p>
-                      <p style={{ color: "#cccccc", marginBottom: "5px" }}>
-                        Sexta e Sábado: 18:00 - 02:00
-                      </p>
-                      <p style={{ color: "#cccccc" }}>Domingo: 18:00 - 23:00</p>
+                    <div className="resto-info">
+                      <h4>🕒 Horário de Funcionamento</h4>
+                      <p>Segunda a Quinta: 18:00 - 24:00</p>
+                      <p>Sexta e Sábado: 18:00 - 02:00</p>
+                      <p>Domingo: 18:00 - 23:00</p>
                     </div>
                   </div>
                 </div>
@@ -469,154 +320,29 @@ const Reservas = () => {
           {/* Localização Tab */}
           {activeTab === "localizacao" && (
             <div>
-              <h2
-                style={{
-                  color: "#ff6b35",
-                  marginBottom: "25px",
-                  fontSize: "1.8rem",
-                  textAlign: "center",
-                }}
-              >
-                📍 Nossa Localização
-              </h2>
+              <h2 className="formulario--titulo">📍 Nossa Localização</h2>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                  gap: "40px",
-                }}
-              >
+              <div className="dados-cliente">
                 <div>
-                  <div
-                    style={{
-                      background: "rgba(255, 107, 53, 0.1)",
-                      border: "1px solid rgba(255, 107, 53, 0.3)",
-                      borderRadius: "12px",
-                      padding: "30px",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    <h3 style={{ color: "#ff6b35", marginBottom: "20px" }}>
-                      📍 Endereço
-                    </h3>
-                    <p
-                      style={{
-                        color: "#cccccc",
-                        fontSize: "1.1rem",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      <strong>Hamburgaria Premium</strong>
+                  <div className="resto-info">
+                    <h3>📍 Endereço</h3>
+                    <p>
+                      <strong>Kamikaze Smash Dinner</strong>
                       <br />
-                      Rua dos Sabores, 123
+                      Rua da Nora, 123
                       <br />
-                      1200-001 Lisboa
+                      3100-372 Pombal
                       <br />
                       Portugal
                     </p>
                   </div>
-
-                  <div
-                    style={{
-                      background: "rgba(255, 107, 53, 0.1)",
-                      border: "1px solid rgba(255, 107, 53, 0.3)",
-                      borderRadius: "12px",
-                      padding: "30px",
-                    }}
-                  >
-                    <h3 style={{ color: "#ff6b35", marginBottom: "20px" }}>
-                      🚗 Como Chegar
-                    </h3>
-                    <ul style={{ color: "#cccccc", lineHeight: "1.8" }}>
-                      <li>
-                        <strong>Metro:</strong> Estação Marquês de Pombal (5 min
-                        a pé)
-                      </li>
-                      <li>
-                        <strong>Autocarro:</strong> Linhas 44, 83, 206
-                      </li>
-                      <li>
-                        <strong>Carro:</strong> Estacionamento público nearby
-                      </li>
-                      <li>
-                        <strong>Táxi/Uber:</strong> Paragem à porta
-                      </li>
-                    </ul>
-                  </div>
                 </div>
 
-                <div>
-                  {/* Placeholder para mapa */}
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "400px",
-                      background: "rgba(30, 30, 30, 0.8)",
-                      border: "1px solid #404040",
-                      borderRadius: "15px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      gap: "15px",
-                    }}
-                  >
-                    <div style={{ fontSize: "3rem" }}>🗺️</div>
-                    <p style={{ color: "#cccccc", textAlign: "center" }}>
-                      Mapa Interativo
-                      <br />
-                      <small style={{ color: "#999" }}>
-                        (Integre com Google Maps ou outro serviço)
-                      </small>
-                    </p>
-                  </div>
-
-                  <div
-                    style={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "15px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <button
-                      style={{
-                        background: "linear-gradient(45deg, #ff6b35, #ff8c42)",
-                        color: "white",
-                        border: "none",
-                        padding: "12px 20px",
-                        borderRadius: "10px",
-                        cursor: "pointer",
-                        fontSize: "1rem",
-                        fontWeight: "500",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      }}
-                    >
-                      🧭 Ver no Google Maps
-                    </button>
-
-                    <button
-                      style={{
-                        background: "rgba(45, 45, 45, 0.8)",
-                        color: "white",
-                        border: "1px solid #404040",
-                        padding: "12px 20px",
-                        borderRadius: "10px",
-                        cursor: "pointer",
-                        fontSize: "1rem",
-                        fontWeight: "500",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      }}
-                    >
-                      📱 Obter Direções
-                    </button>
-                  </div>
-                </div>
+                {/* Placeholder para mapa */}
+                <iframe
+                  className="map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3062.1160309001825!2d-8.660720023489331!3d39.87163878863436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2265870dae0cf1%3A0x7cffd25d8e863b7c!2sR.%20da%20Nora%2C%20Pombal!5e0!3m2!1spt-PT!2spt!4v1756851024117!5m2!1spt-PT!2spt"
+                ></iframe>
               </div>
             </div>
           )}
@@ -624,17 +350,6 @@ const Reservas = () => {
       </div>
 
       <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         input:focus,
         textarea:focus,
         select:focus {
